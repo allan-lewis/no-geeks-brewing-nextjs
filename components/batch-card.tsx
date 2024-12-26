@@ -1,7 +1,7 @@
-import { Batch } from "./brewfather-batches"
+import { Batch } from "../lib/apollo-client"
 
 export default function BatchCard({batch} : {batch: Batch}) {
     return (
-        <div>{ batch.batchName } ({ batch.batchStyle})</div>
+        <div>#{batch.batchNumber}: { batch.batchName } ({ batch.batchStyle})</div>
     )
   }
