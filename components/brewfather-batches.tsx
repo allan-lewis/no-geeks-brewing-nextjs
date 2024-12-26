@@ -7,13 +7,15 @@ const USER_LIST_QUERY = gql`
     batches(batchDate: 0) {
       batchId
       batchName
+      batchStyle
     }
   }
 `;
 
 export interface Batch {
   batchId: string,
-  batchName: string
+  batchName: string,
+  batchStyle: string
 }
 
 export interface GetBatchesResponse {
@@ -28,14 +30,11 @@ export default async function BrewfatherBatches() {
 
   return (
     <div className="rounded-t-md bg-neutral-200 p-4">
-        <h3 className="text-xl">Brewfather Batches</h3>
+        <h3 className="text-xl mb-4">Brewfather Batches</h3>
         <div>
       {data.batches.map(batch => (
         <BatchCard key={batch.batchId} batch={batch}></BatchCard> 
       ))}
-            {/* <p className="text-center py-16">
-                <em>No Brewfather batch data found.</em>
-            </p> */}
         </div>
     </div>
   )
