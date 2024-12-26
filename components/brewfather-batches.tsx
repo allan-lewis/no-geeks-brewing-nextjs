@@ -1,4 +1,4 @@
-import { getClient, query } from '../lib/apollo-client';
+import { query } from '../lib/apollo-client';
 import { gql } from "@apollo/client";
 import BatchCard from "./batch-card"
 
