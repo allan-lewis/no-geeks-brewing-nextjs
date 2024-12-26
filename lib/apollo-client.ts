@@ -9,7 +9,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-      uri: "https://api.nogeeksbrewing.com/graphql",
+      uri: process.env.GRAPHQL_URL,
     }),
   });
 });
