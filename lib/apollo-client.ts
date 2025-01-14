@@ -7,7 +7,7 @@ import {
 
 export const BATCHES_QUERY = gql`
   query UserList {
-    batches(batchDate: 0) {
+    batches(batchDate: 1735689600000) { 
       batchId
       batchName
       batchStyle
