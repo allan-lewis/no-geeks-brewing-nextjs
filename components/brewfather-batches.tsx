@@ -11,7 +11,7 @@ export default async function BrewfatherBatches() {
   return (
     <div className="rounded-t-md bg-neutral-200 p-4">
         <h3 className="text-xl mb-4">Brewfather Batches ({data.batches.length})</h3>
-        <div>
+        <div className="grid grid-cols-3 gap-4">
       {data.batches.map(batch => (
         <BatchCard key={batch.batchId} batch={batch}></BatchCard> 
       ))}
