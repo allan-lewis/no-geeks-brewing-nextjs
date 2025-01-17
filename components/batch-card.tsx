@@ -19,11 +19,11 @@ export default function BatchCard({batch} : {batch: Batch}) {
                     <div className=" flex items-center justify-between">
                         <div>     
                             <div>Batch #{ batch.batchNumber }</div>                       
-                            <div className="mb-4">
+                            <div className="mt-2">
                                 <Badge>{ batch.batchStatus }</Badge>
                             </div>
                         </div>
-                        <div className="align-top"> 
+                        <div> 
                             <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }>
                                 <ExternalLinkIcon width="22" height="22"></ExternalLinkIcon>
                             </a>               
