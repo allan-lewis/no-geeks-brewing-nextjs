@@ -7,20 +7,37 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+  import moment from 'moment';
+  import { ExternalLinkIcon } from "@radix-ui/react-icons"
+  import { Badge } from "@/components/ui/badge"
 
 export default function BatchCard({batch} : {batch: Batch}) {
     return (
         <Card>
-        <CardHeader>
-            <CardTitle>{ batch.batchName }</CardTitle>
-            <CardDescription>{ batch.batchStyle }</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
+            <CardHeader>
+                <CardTitle className="text-l">
+                    <div className=" flex items-center justify-between">
+                        <div>Batch #{ batch.batchNumber }</div>    
+                        <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }><ExternalLinkIcon width="22" height="22"></ExternalLinkIcon></a>               
+                    </div>                    
+                </CardTitle>
+                <CardDescription> 
+                    </CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div>
+                    <div>
+                        <div className="mb-4">
+                            <Badge>{ batch.batchStatus }</Badge>
+                        </div>
+                        <div className="text-base text-black">{ batch.batchName }</div>
+                        <div className="text-sm text-muted-background">{ batch.batchStyle }</div>
+                    </div>
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div className="text-sm">{ moment(batch.batchDate).format('LL') }</div>
+            </CardFooter>
         </Card>
     )
   }

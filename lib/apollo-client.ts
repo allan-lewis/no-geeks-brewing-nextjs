@@ -12,6 +12,9 @@ export const BATCHES_QUERY = gql`
       batchName
       batchStyle
       batchNumber
+      batchDate
+      batchStatus
+      batchUrl
     }
   }
 `;
@@ -20,7 +23,10 @@ export interface Batch {
   batchId: string,
   batchName: string,
   batchStyle: string,
-  batchNumber: number
+  batchNumber: number,
+  batchDate: number,
+  batchStatus: string,
+  batchUrl: string
 }
 
 export interface GetBatchesResponse {
