@@ -17,8 +17,17 @@ export default function BatchCard({batch} : {batch: Batch}) {
             <CardHeader>
                 <CardTitle className="text-l">
                     <div className=" flex items-center justify-between">
-                        <div>Batch #{ batch.batchNumber }</div>    
-                        <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }><ExternalLinkIcon width="22" height="22"></ExternalLinkIcon></a>               
+                        <div>     
+                            <div>Batch #{ batch.batchNumber }</div>                       
+                            <div className="mb-4">
+                                <Badge>{ batch.batchStatus }</Badge>
+                            </div>
+                        </div>
+                        <div className="align-top"> 
+                            <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }>
+                                <ExternalLinkIcon width="22" height="22"></ExternalLinkIcon>
+                            </a>               
+                        </div>
                     </div>                    
                 </CardTitle>
                 <CardDescription> 
@@ -27,9 +36,6 @@ export default function BatchCard({batch} : {batch: Batch}) {
             <CardContent>
                 <div>
                     <div>
-                        <div className="mb-4">
-                            <Badge>{ batch.batchStatus }</Badge>
-                        </div>
                         <div className="text-base text-black">{ batch.batchName }</div>
                         <div className="text-sm text-muted-background">{ batch.batchStyle }</div>
                     </div>
