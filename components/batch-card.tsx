@@ -16,15 +16,15 @@ export default function BatchCard({batch} : {batch: Batch}) {
         <Card>
             <CardHeader>
                 <CardTitle className="text-l">
-                    <div className="flex items-center justify-between bg-red-400">
+                    <div className="flex  justify-between">
                         <div>     
                             <div>Batch #{ batch.batchNumber }</div>                       
                             <div className="mt-2">
                                 <Badge>{ batch.batchStatus }</Badge>
                             </div>
                         </div>
-                        <div className="bg-green-400 parent flex flex-col"> 
-                            <div className="child flex-1 mx-auto">
+                        <div className="parent flex flex-col"> 
+                            <div className="child flex-1">
                             <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }>
                                 <ExternalLinkIcon width="22" height="22"></ExternalLinkIcon>
                             </a> 
@@ -32,8 +32,6 @@ export default function BatchCard({batch} : {batch: Batch}) {
                         </div>
                     </div>                    
                 </CardTitle>
-                <CardDescription> 
-                    </CardDescription>
             </CardHeader>
             <CardContent>
                 <div>

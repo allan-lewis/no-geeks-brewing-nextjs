@@ -12,7 +12,7 @@ export default async function BrewfatherBatches() {
     <div className="rounded-t-md bg-neutral-200 p-4">
         <h3 className="text-xl mb-4">Brewfather Batches ({data.batches.length})</h3>
         <div className="grid grid-cols-3 gap-4">
-      {data.batches.map(batch => (
+      {[...data.batches].sort((b1, b2) => b1.batchDate -b2.batchDate).map(batch => (
         <BatchCard key={batch.batchId} batch={batch}></BatchCard> 
       ))}
         </div>
