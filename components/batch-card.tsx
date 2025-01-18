@@ -48,7 +48,7 @@ export default function BatchCard({batch} : {batch: Batch}) {
   function badge(status: string) {
     return (
         <div className="mt-2">
-            <Badge variant="outline">{ status }</Badge>
+            <Badge>{ status }</Badge>
         </div>
     );
   }
