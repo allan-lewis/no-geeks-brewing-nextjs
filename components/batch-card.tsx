@@ -1,15 +1,16 @@
-import { Batch } from "../lib/apollo-client"
+import { Batch } from '../lib/apollo-client'
+
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
-  } from "@/components/ui/card"
-  import moment from 'moment';
-  import { ExternalLinkIcon } from "@radix-ui/react-icons"
-  import { Badge } from "@/components/ui/badge"
+} from '@/components/ui/card'
+
+import moment from 'moment'
+import { ExternalLinkIcon } from '@radix-ui/react-icons'
+import { Badge } from '@/components/ui/badge'
 
 export default function BatchCard({batch} : {batch: Batch}) {
     return (
@@ -19,15 +20,11 @@ export default function BatchCard({batch} : {batch: Batch}) {
                     <div className="flex  justify-between">
                         <div>     
                             <div>Batch #{ batch.batchNumber }</div>                       
-                            <div className="mt-2">
-                                <Badge>{ batch.batchStatus }</Badge>
-                            </div>
+                            { badge(batch.batchStatus) }
                         </div>
                         <div className="parent flex flex-col"> 
                             <div className="child flex-1">
-                            <a target="_blank" rel="noopener noreferrer" href={ batch.batchUrl }>
-                                <ExternalLinkIcon width="22" height="22"></ExternalLinkIcon>
-                            </a> 
+                                { share(batch.batchUrl) }
                             </div>              
                         </div>
                     </div>                    
@@ -46,4 +43,22 @@ export default function BatchCard({batch} : {batch: Batch}) {
             </CardFooter>
         </Card>
     )
+  }
+
+  function badge(status: string) {
+    return (
+        <div className="mt-2">
+            <Badge variant="outline">{ status }</Badge>
+        </div>
+    );
+  }
+
+  function share(url: string) {
+    if (url == null) return <div></div>
+
+    return (
+        <a target="_blank" rel="noopener noreferrer" href={ url }>
+            <ExternalLinkIcon width="22" height="22"></ExternalLinkIcon>
+        </a> 
+    );
   }
