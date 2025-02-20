@@ -10,7 +10,7 @@ export default async function AuthButtons() {
           "use server"
           await signIn("authentik")
         }}>
-        <Button type="submit">Sign In Now</Button>
+        <Button type="submit">Sign In Now!</Button>
       </form> }
       { session &&<form action={async () => {
           "use server"
